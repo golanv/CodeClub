@@ -1,9 +1,6 @@
 /*
  *  Circle2D Class and corresponding methods.
- *  Name: Aaron Burnett (aburn02s)
- *  Class Section: CSC 225E
- *  Instructor: Kamyar Dezhgosha
- *  Date: 11/26/2017
+ *  Author: Me.
  */
 
 public class Circle2D {
@@ -64,5 +61,27 @@ public class Circle2D {
         // within the primary circle.
         return (distance < (radius + circle.radius)) && 
                 !(distance <= (radius - circle.radius));
+    }
+    
+    public double overlapArea(Circle2D circle) {
+        double distance = Math.sqrt((x - circle.x)*(x - circle.x) + 
+                (y - circle.y)*(y - circle.y));
+        if(radius < circle.radius) {
+            // swap
+            double temp = radius;
+            radius = circle.radius;
+            circle.radius = temp;
+        }
+        double x = radius * radius * Math.acos((distance * distance + 
+                radius * radius - circle.radius * circle.radius)/(2 * 
+                        distance * radius));
+        double y = circle.radius * circle.radius * Math.acos((distance * 
+                distance + circle.radius * circle.radius - radius * radius)/
+                (distance * distance * circle.radius));
+        double z = 0.5 * Math.sqrt((-distance + radius + circle.radius)*(
+                distance - radius + circle.radius)*(distance - radius + 
+                        circle.radius)*(distance + radius + circle.radius));
+        
+        return x + y + z;
     }
 }
