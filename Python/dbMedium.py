@@ -12,14 +12,6 @@ cur.execute("SELECT * FROM employee")
 # Retrieve results
 results = cur.fetchall()
 
-# Create X and Y points
-x = []
-i = 0
-
-for row in results:
-    i = i + 1
-    x.append(i)
-
 a = [] # Job Satisfaction Score
 b = [] # Name
 
