@@ -6,7 +6,7 @@ import configparser
 
 # ConfigParser bits
 config = configparser.ConfigParser()
-config.read('connection.ini')
+config.read('db/connection.ini')
 
 # Bits to connect to Databases
 ### Using ConfigParser ###
