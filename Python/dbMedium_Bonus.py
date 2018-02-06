@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 from db.conn import *
 from bokeh.plotting import figure, output_file, show
-from bokeh.models import NumeralTickFormatter, HoverTool
+from bokeh.models import NumeralTickFormatter, HoverTool, FactorRange, ColumnDataSource
 from bokeh.layouts import row, column
-from bokeh.charts import Bar
+#from bokeh.charts import Bar
 
 # Open a cursor to perform database operations
 cur = conn.cursor()
@@ -23,8 +23,11 @@ hobbies = []
 job_satisfaction = []
 gender = []
 myArray = []
+data = []
 
 for rows in results:
+    data.append((rows[1], rows[5]))
+    data.append((rows[4], rows[5]))
     id.append(rows[0])
     name.append(rows[1])
     salary.append(rows[2])
@@ -36,6 +39,7 @@ for rows in results:
 output_file("lines.html")
 print(name)
 print(job_satisfaction)
+print(data)
 
 
 # Correct misspellings
@@ -68,7 +72,16 @@ r.vbar(x=name, top=salary, width=0.9)
 r.left[0].formatter = NumeralTickFormatter(format="$,000")
 r.y_range.start = 0
 
-show(column(p, r, q))
+#x = [ (moo, score) for moo in hobbies for score in job_satisfaction]
+#counts = sum(zip(data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10]), ())
+#source = ColumnDataSource(data=dict(x=x, counts=counts))
+
+#s = figure(x_range=FactorRange(*data), plot_height=250, title="Title!")
+#s.vbar(x=data, top=job_satisfaction, width=0.9)
+s = figure(plot_width=400, plot_height=400)
+s.circle(id, job_satisfaction, size=20, color="navy", alpha=0.5)
+
+show(column(p, q, r, s))
 
 
 cur.close()
