@@ -49,7 +49,6 @@ print(hobbies)
 hobbies_clean = list(set(hobbies))
 print("Cleaned Hobbies List:")
 print(hobbies_clean)
-
 #hoverp = HoverTool(tooltips=[("Job Satisfaction Score", "$y")])
 #hoverq = HoverTool(tooltips=[("Job Satisfaction Score", "$y")])
 #hoverr = HoverTool(tooltips=[("Salary", "$y")])
