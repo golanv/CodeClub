@@ -4,9 +4,10 @@ from matplotlib import pyplot as plt
 
 
 class projectP():
-    
-    def __init__(self):
-        print("projectP initialaztion successfull")
+
+
+    #def __init__(self):
+        ### Any default variables go here, should they be needed
 
 
     def regress(self):
@@ -23,8 +24,6 @@ class projectP():
                 if (data[i] != None):
                     count[i] = data[i]
         print(data)
-        
-        
         # Some predictive linear regression kung foo goes here
 
 
@@ -36,6 +35,6 @@ class projectP():
         plt.plot(count,data,'o')
         plt.plot(count,polyval(p1,count), 'r-')
         plt.plot(count,polyval(p2,count), 'b--')
-        plt.plot(count,polyval(p3,count), 'm:')
+        #plt.plot(count,polyval(p3,count), 'm:')
         plt.show()
         

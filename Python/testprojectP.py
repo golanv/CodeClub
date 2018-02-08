@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-#import classes.projectP
 from classes.projectP import *
 
 pp = projectP()
@@ -23,5 +22,5 @@ print(count)
 print(data)
         
 
-# Send data to projectP.regScore for additional processing
+# Send data to regScore() for additional processing
 pp.regScore(data, count)
