@@ -28,23 +28,7 @@ class projectP():
         # Some predictive linear regression kung foo goes here
 
 
-    def regScore(self):
-        data = []
-        count = []
-        i = 0
-        flow = True
-        while (flow):
-            try:
-                num = float(input("Enter mean (as float): "))
-                data.append(num)
-                count.append(i)
-                i = i + 1
-            except:
-                print("Loser.")
-                break;
-                #flow = False
-        print(count)
-        print(data)
+    def regScore(self, data, count):
         p1 = polyfit(count, data,1) # Linear polyfit?  Slope and intercept?
         p2 = polyfit(count,data,2)
         p3 = polyfit(count,data,3)
