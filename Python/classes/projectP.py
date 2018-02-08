@@ -31,7 +31,6 @@ class projectP():
         p1 = polyfit(count, data,1) # Linear polyfit?  Slope and intercept?
         p2 = polyfit(count,data,2)
         p3 = polyfit(count,data,3)
-        print(p1)
         plt.plot(count,data,'o')
         plt.plot(count,polyval(p1,count), 'r-')
         plt.plot(count,polyval(p2,count), 'b--')
