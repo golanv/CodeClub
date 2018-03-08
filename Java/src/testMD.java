@@ -14,7 +14,7 @@ public class testMD {
         // Test collectData();
         ArrayList list1 = md.collectData();
         for (int i = 0; i < list1.size(); i++) {
-            //1 System.out.println(list1.get(i));
+            // System.out.println(list1.get(i));
         }
         System.out.println(md.relDiff(list1));
     }

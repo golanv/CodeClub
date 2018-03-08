@@ -16,14 +16,8 @@ public class MeaningfulDifference {
     
     public ArrayList collectData() {
         ArrayList<Double> data = new ArrayList<Double>();
-        while (true) {
-            double i = getUserInput("Enter a number:");
-            if (i == 0) {
-                break;
-            } else {
-                //double num = Double.parseDouble(i);
-                data.add(i);
-            }            
+        for (int i = 0; i < 2; i++) {
+            data.add(getUserInput("Enter a number:"));
         }
         return data;
     }
