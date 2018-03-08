@@ -1,3 +1,6 @@
+package MeaningfulDifference;
+
+//import MeaningfulDifference.MeaningfulDifference;
 import java.util.ArrayList;
 
 public class testMD {
